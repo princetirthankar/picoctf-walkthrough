@@ -1,0 +1,30 @@
+@PW Crack 4
+
+Make This Changes in your Python level4.py code
+  1.First take the pos_pw_list list from below to under the import tag 
+  2. Add this Code Just after the "def hash_pw(pw_str):"
+      ->>def find_pw():
+	       		for i in p wos_pw_list:
+		      		user_pw = i
+		      		user_pw_hash = hash_pw(user_pw)
+		      		if( user_pw_hash == correct_pw_hash ):
+			          	return i
+         print(find_pw())
+
+         def level_4_pw_check():
+#     			user_pw = input("Please enter correct password for flag: ")
+     				user_pw_hash = hash_pw(find_pw())
+
+ 			   	 if( user_pw_hash == correct_pw_hash ):
+      		   	print("Welcome back... your flag, user:")
+         			decryption = str_xor(flag_enc.decode(), find_pw())
+         			print(decryption)
+         			return
+     				print("That password is incorrect")
+
+			
+					level_4_pw_check()
+
+What this will do is first travser through every password giving in list and camper it with real password and if matched then it will return that password 
+into function called find_pw() then instand of asking for user to enter the password it will directly add that password into user_pw and run the same process 
+but now it will return the picoctf flag.
